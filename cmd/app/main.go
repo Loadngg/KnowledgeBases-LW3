@@ -1,6 +1,7 @@
 package main
 
 import (
+	"fyne.io/fyne/v2"
 	"fyne.io/fyne/v2/app"
 
 	"lr3/internal/app/design"
@@ -16,5 +17,6 @@ func main() {
 	d := design.MustLoad(nn)
 
 	w.SetContent(d)
+	w.Resize(fyne.Size{Width: 500, Height: 400})
 	w.ShowAndRun()
 }
