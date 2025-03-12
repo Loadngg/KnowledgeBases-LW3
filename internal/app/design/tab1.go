@@ -34,7 +34,7 @@ func Tab1(n *network.Network) *fyne.Container {
 		inputStr := inputEntry.Text
 		input, err := utils.ParseFloat64Array(inputStr)
 		if err != nil {
-			resultLabel.SetText(constants.InvalidInputError.String())
+			resultLabel.SetText(err.Error())
 			return
 		}
 

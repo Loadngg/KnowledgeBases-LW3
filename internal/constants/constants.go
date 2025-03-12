@@ -29,7 +29,7 @@ var textLabels = map[TextEnum]string{
 	HiddenWeightsLabel:         "Скрытые веса:",
 	OutputWeightsLabel:         "Выходные веса:",
 	InputEntryPlaceholder:      "0.63 0.25 0.84 1",
-	InvalidInputError:          "Неверный ввод начальных значений",
+	InvalidInputError:          "Неверный ввод начальных значений. Введите 4 значения через пробел",
 }
 
 func (e TextEnum) String() string {

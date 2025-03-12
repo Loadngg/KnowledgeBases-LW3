@@ -1,9 +1,12 @@
 package utils
 
 import (
+	"errors"
 	"fmt"
 	"strconv"
 	"strings"
+
+	"lr3/internal/constants"
 )
 
 func FormatMatrix(matrix [][]float64, precision int) string {
@@ -49,7 +52,11 @@ func FormatMatrix(matrix [][]float64, precision int) string {
 
 func ParseFloat64Array(text string) ([]float64, error) {
 	splitText := strings.Split(text, " ")
-	result := make([]float64, len(splitText))
+	length := len(splitText)
+	if length != 4 {
+		return nil, errors.New(constants.InvalidInputError.String())
+	}
+	result := make([]float64, length)
 	for i, str := range splitText {
 		val, err := strconv.ParseFloat(str, 64)
 		if err != nil {
